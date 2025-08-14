@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../util/todo_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,6 +17,15 @@ class _HomePageState extends State<HomePage> {
         title: Text('TO DO'),
         backgroundColor: Colors.yellow[700],
         elevation: 0,
+      ),
+      body: ListView(
+        children: [
+          ToDoTile(
+            taskName: "Make Tutorial",
+            taskCompleted: false,
+            onChanged: (p0) {},
+          ),
+        ],
       ),
     );
   }
