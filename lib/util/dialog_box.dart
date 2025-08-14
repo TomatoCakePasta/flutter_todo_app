@@ -3,7 +3,15 @@ import 'package:flutter_todo_app/util/my_button.dart';
 
 class DialogBox extends StatelessWidget {
   final controller;
-  const DialogBox({super.key, required this.controller,});
+  VoidCallback onSave;
+  VoidCallback onCancel;
+
+  DialogBox({
+    super.key, 
+    required this.controller,
+    required this.onSave,
+    required this.onCancel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +36,12 @@ class DialogBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 // save button
-                MyButton(text: "Save", onPressed: (){}, color: const Color.fromARGB(255, 78, 244, 84)),
+                MyButton(text: "Save", onPressed: onSave, color: const Color.fromARGB(255, 78, 244, 84)),
 
                 const SizedBox(width: 10),
 
                 // cancel button
-                MyButton(text: "Cancel", onPressed: (){}, color: const Color.fromARGB(255, 243, 90, 79)),
+                MyButton(text: "Cancel", onPressed: onCancel, color: const Color.fromARGB(255, 243, 90, 79)),
               ],
             ),
           ]
