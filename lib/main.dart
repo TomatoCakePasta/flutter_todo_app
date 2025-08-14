@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
+      // Flutter 3.x以降はprimarySwatchが無効かも
+      theme: ThemeData(primarySwatch: Colors.yellow),
     );
   }
 }
